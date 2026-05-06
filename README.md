@@ -4,7 +4,7 @@ For each vehicle, expected longevity is simulated given its current mileage, wit
 
 ## About
 
-This is a Monte Carlo model using NumPy, which can scale very efficiently to a large number of simulation.
+This is a Monte Carlo model using NumPy, which can scale very efficiently to a large number of simulations.
 
 The model operates by simulating both the mileage at which the car will no longer be operational due to mechanical failure 
 and the mileage at which the car will be totaled in an accident. 
@@ -15,7 +15,7 @@ The simulation conditions on the vehicle's current mileage. As an example, a car
 
 ## Model Assumptions
 
-* Mileage at a vehicle's death from normal wear is assumed to follow a Weibull distribution with parameter *k*. While *k* can vary, it is set to a default of 2.5. The scale's default is 260,000, but can likewise vary.
+* Mileage until mechanical failure is assumed to follow a Weibull distribution with parameter *k*. While *k* can vary, it is set to a default of 2.5. The default scale parameter is 260,000, though it can likewise be adjusted.
 * Mileage until catastrophic accident is modeled using an exponential distribution, set to a default mean of 200,000.
 
 ## Sample Output
@@ -60,7 +60,8 @@ From the chart, we can see at a glance that while about 40 percent of cars with 
 
 ## Motivation
 
-* Calculating the expected miles until a car is no longer functional is crucial to vehicle owners in determining whether to purchase a vehicle and estimating their risk of incurring unplanned expenses in a given month.
+* Calculating the expected miles until a car is no longer functional is crucial to vehicle owners in determining whether to purchase a vehicle.
+* It may also assist in estimating the risk of incurring unplanned expenses in a given time horizon.
 * Calculating the probability that a car will fail in the next month can help a vehicle owner to assess the value of an insurance policy, given their risk.
 
 ## How To Run
