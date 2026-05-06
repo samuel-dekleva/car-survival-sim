@@ -42,14 +42,21 @@ An example dataframe follows below.
 
 ### Histograms
 
+Below are some sample histograms. One car has 100,000 miles on it, and the other has 400,000. This is how the distribution of accident versus mechanical failure breaks down per miles traveled.
+
+![](https://imgur.com/myoMIJp.png) 
 
 ### Survival Chart
 
+Here are the survival curves for the above histograms.
 
+![](https://imgur.com/8NUD1oA.png)
+
+From the chart, we can see at a glance that while about 40 percent of cars with 100,000 miles make it another 100,000, less than 10 percent of cars with 400,000 miles complete the same feat.
 
 ## Motivation
 
-* Calculating the expected miles until a car is no longer functional is crucial to vehicle owners in determining whether to purchase a vehicle.
+* Calculating the expected miles until a car is no longer functional is crucial to vehicle owners in determining whether to purchase a vehicle, and estimating their total unexpected expenses.
 * Calculating the probability that a car will fail in the next month can help a vehicle owner to assess the value of an insurance policy, given their risk.
 
 ## How To Run
