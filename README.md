@@ -1,19 +1,23 @@
 # Car Survival Simulator
-Welcome to the car survival simulator!
-This is a calculation of simulated survival probability of a car to a certain mileage given its current mileage, with adjustable parameters.
+A Monte Carlo simulation framework for estimating vehicle longevity under mechanical failure and accident risk.
+
+The program simulates the expected longevity of a vehicle given its current mileage, with adjustable parameters.
 
 ## About
 
-This is a Monte Carlo model which can run over 1,000,000 simulations per vehicle in just a few seconds.
+This is a Monte Carlo model using NumPy, which can scale very efficiently to a large number of simulation.
 
-The model operates by calculating the mileage at which the car will be totaled from wear and tear and the mileage at which the car will be totaled in an accident. The minimum of these values is the total mileage reached before the car dies. It formats this data into a dataframe and displays histograms and survival curves to visualize the data.
+The model operates by simulating both the mileage at which the car will no longer be operational due to mechanical failure 
+and the mileage at which the car will be totaled in an accident. 
+The minimum of these values is the total mileage reached before the vehicle is retired. 
+The program formats this data into a dataframe and displays histograms and survival curves to visualize the data.
 
-The simulation conditions on the number of miles the car already has. As an example, a car with 100,000 miles on it will be closer, on average, to mechanical failure than a car with 0 miles on it.
+The simulation conditions on the vehicle's current mileage. As an example, a car with 100,000 miles on it will be closer, on average, to mechanical failure than a car with 0 miles on it.
 
 ## Model Assumptions
 
-* Mileage at a vehicle's death from normal wear is assumed to follow a Weibull distribution with parameter *k*. While *k* can vary, it is set to a default of 2.5.
-* Mileage at which a vehicle is totaled due to accident is assumed to follow an exponential distribution.
+* Mileage at a vehicle's death from normal wear is assumed to follow a Weibull distribution with parameter *k*. While *k* can vary, it is set to a default of 2.5. The scale's default is 260,000, but can likewise vary.
+* Mileage until catastrophic accident is modeled using an exponential distribution, set to a default mean of 200,000.
 
 ## Sample Output
 
@@ -22,7 +26,7 @@ An example dataframe follows below.
 
 ### DataFrame
 
-|    miles  |mean_life | median_life  |mech_fail_pct | <2.5k|
+| miles | mean_life | median_life | mech_fail_pct | <2.5k |
 |-------------|----------|--------------|--------------|------|
 | 0  | 129272.8  |   113557.9   |        35.4  |  1.2|
 | 80000 |  100858.2   |   84955.0   |        49.5 |   1.7|
@@ -42,7 +46,8 @@ An example dataframe follows below.
 
 ### Histograms
 
-Below are some sample histograms. One car has 100,000 miles on it, and the other has 400,000. This is how the distribution of accident versus mechanical failure breaks down per miles traveled.
+Below are some sample histograms. One car has 100,000 miles on it, and the other has 400,000. 
+The histograms below illustrate the distribution of remaining vehicle life separated by mechanical failure versus accident-related failure.
 
 ![](https://imgur.com/myoMIJp.png) 
 
@@ -52,15 +57,20 @@ Here are the survival curves for the above histograms.
 
 ![](https://imgur.com/8NUD1oA.png)
 
-From the chart, we can see at a glance that while about 40 percent of cars with 100,000 miles make it another 100,000, less than 10 percent of cars with 400,000 miles complete the same feat.
+From the chart, we can see at a glance that while about 40 percent of cars with 100,000 miles make it another 100,000, less than 10 percent of cars with 400,000 miles survive for 100,000 more miles.
 
 ## Motivation
 
-* Calculating the expected miles until a car is no longer functional is crucial to vehicle owners in determining whether to purchase a vehicle, and estimating their total unexpected expenses.
+* Calculating the expected miles until a car is no longer functional is crucial to vehicle owners in determining whether to purchase a vehicle and estimating their risk of incurring unplanned expenses in a given month.
 * Calculating the probability that a car will fail in the next month can help a vehicle owner to assess the value of an insurance policy, given their risk.
 
 ## How To Run
 
+The required inputs are the:
+* Number of vehicles to test (recommended to use 10 or less for histogram readability);
+* Number of simulations of each vehicle to run (highly scalable, but recommended to use between 50,000 and 1,500,000);
+* Current mileage of each vehicle.
+  
 You can run the code in Python using [Car_Survival_Sim.py](Car_Survival_Sim.py), and you can see the notebook 
 [here](Car_Survival_Sim.ipynb).
 
