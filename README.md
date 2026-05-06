@@ -1,7 +1,6 @@
 # Car Survival Simulator
 A Monte Carlo simulation framework for estimating vehicle longevity under mechanical failure and accident risk.
-
-The program simulates the expected longevity of a vehicle given its current mileage, with adjustable parameters.
+For each vehicle, expected longevity is simulated given its current mileage, with many adjustable parameters.
 
 ## About
 
