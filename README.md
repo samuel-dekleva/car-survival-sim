@@ -6,7 +6,7 @@ This is a calculation of simulated survival probability of a car to a certain mi
 
 This is a Monte Carlo model which can run over 1,000,000 simulations per vehicle in just a few seconds.
 
-The model operates by calculating the mileage at which the car will be totaled from wear and tear and the mileage at which the car will be totaled in an accident. The minimum of these values is the total mileage reached before the car dies.
+The model operates by calculating the mileage at which the car will be totaled from wear and tear and the mileage at which the car will be totaled in an accident. The minimum of these values is the total mileage reached before the car dies. It formats this data into a dataframe and displays histograms and survival curves to visualize the data.
 
 The simulation conditions on the number of miles the car already has. As an example, a car with 100,000 miles on it will be closer, on average, to mechanical failure than a car with 0 miles on it.
 
