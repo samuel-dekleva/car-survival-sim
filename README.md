@@ -61,4 +61,7 @@ From the chart, we can see at a glance that while about 40 percent of cars with 
 
 ## How To Run
 
-You can run the code using 
+You can run the code in Python using [Car_Survival_Sim.py](Car_Survival_Sim.py), and you can see the notebook 
+[here](Car_Survival_Sim.ipynb).
+
+Have fun!
